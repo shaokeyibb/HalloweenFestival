@@ -6,7 +6,7 @@
 name: ${name}
 main: ${main}
 version: ${version}
-authors: ['坏黑']
+authors: ['贺兰星辰']
 
 lib-download: true
 lib-version: ${libVersion}
