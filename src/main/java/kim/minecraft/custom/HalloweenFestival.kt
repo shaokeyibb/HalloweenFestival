@@ -5,6 +5,7 @@ import io.izzel.taboolib.loader.Plugin
 import io.izzel.taboolib.module.config.TConfig
 import kim.minecraft.custom.features.StealthEntity
 import kim.minecraft.custom.features.WeatherControl
+import kim.minecraft.custom.listener.DisAllowBedListener
 import org.bukkit.Bukkit
 import org.bukkit.WeatherType
 

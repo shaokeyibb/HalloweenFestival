@@ -4,18 +4,17 @@ import io.izzel.taboolib.module.inject.TListener
 import kim.minecraft.custom.HalloweenFestival
 import org.bukkit.entity.*
 import org.bukkit.event.EventHandler
+import org.bukkit.event.Listener
 import org.bukkit.event.entity.EntityDamageByEntityEvent
-import org.bukkit.event.entity.EntityDamageEvent
 import org.bukkit.event.entity.EntityDeathEvent
 import org.bukkit.event.player.PlayerJoinEvent
 import org.bukkit.event.player.PlayerQuitEvent
-import org.bukkit.inventory.EquipmentSlot
 import org.bukkit.scheduler.BukkitRunnable
 import java.util.*
 import kotlin.random.Random
 
 @TListener
-object LightningEverywhere {
+object LightningEverywhere : Listener {
 
     val actions: MutableMap<UUID, Action> = mutableMapOf()
     val fakeEntities: MutableList<Entity> = mutableListOf()
@@ -57,6 +56,7 @@ object LightningEverywhere {
         private val action = object : BukkitRunnable() {
             override fun run() {
                 if (player.world.time < 13000) return
+                if (Random.nextDouble(0.0, 1.0) > HalloweenFestival.config.getDouble("lightningSpawnChance", 0.60)) return
 
                 val type = Random.nextInt(0, 2).run {
                     when (this) {

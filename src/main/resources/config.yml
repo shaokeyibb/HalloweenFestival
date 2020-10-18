@@ -1,3 +1,4 @@
 enable: true
 lightningSpawnPeriodTicks: 60
+lightningSpawnChance: 0.60
 OverallWorldName: world
